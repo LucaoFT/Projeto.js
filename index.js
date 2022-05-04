@@ -11,19 +11,24 @@ let express = require('express');
 const { get } = require('express/lib/response');
 let app = express();
 
-/*app.get('/',function(req,res){
+app.get('/',function(req,res){
     res.send('ROTA GET');
 });
 
-app.get('/rota1',function(req,res){
-    res.send('rota 1');
+app.get('/apresentar',function(req,res){
+    //res.send('rota 1');
+    let param2 = req.query.n1;
+    let param3 = req.query.n2;
+    let soma = parseInt(param2) + parseInt(param3);
+    res.send(`Ola ${soma}`);
+    
 });
 
 app.listen(3000,function(){
     console.log('projeto iniciado na porta 3000');
-});*/
+});
 
-app.route('/book')
+/*app.route('/book')
     .get(function(req, res){
         res.send('Get a random book');
-    });
+    });*/
