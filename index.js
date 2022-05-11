@@ -20,10 +20,13 @@ app.get('/apresentar',function(req,res){
     let param2 = req.query.n1;
     let param3 = req.query.n2;
     let soma = parseInt(param2) + parseInt(param3);
-    res.send(`Ola ${soma}`);
+    res.send(`Resultado: ${soma}`);
     
 });
+app.get('/cadastrar',function(req,res){
+    res.json(req.query);
 
+});
 app.listen(3000,function(){
     console.log('projeto iniciado na porta 3000');
 });
